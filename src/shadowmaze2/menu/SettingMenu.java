@@ -6,24 +6,27 @@ public class SettingMenu extends PApplet {
 
     private int width;
     private int height;
+    private int frame;
 
     @Override
     public void settings() {
         size(width, height);
     }
 
-    public SettingMenu(int w, int h) {
+    public SettingMenu(int w, int h, int f) {
         width = w;
         height = h;
+        frame = f;
     }
 
     @Override
     public void setup() {
         // Add your setup code for the SettingMenu
+        frameRate(frame);
     }
-    
-    public void back(){
-        
+
+    public void back() {
+
     }
 
     @Override

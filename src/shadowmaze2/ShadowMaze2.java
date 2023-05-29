@@ -8,7 +8,8 @@ public class ShadowMaze2 extends PApplet {
     public static void main(String[] args) {
         int width = 1280;
         int height = 720;
-        PApplet.runSketch(new String[]{"shadowmaze2.ShadowMaze2"}, new MainMenu(width, height));
+        int frame = 720;
+        PApplet.runSketch(new String[]{"shadowmaze2.ShadowMaze2"}, new MainMenu(width, height, frame));
     }
 
     @Override

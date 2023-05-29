@@ -11,10 +11,12 @@ public class GameMenu extends PApplet {
     private Button playVersusButton;
     private int width;
     private int height;
+    private int frame;
 
-    public GameMenu(int w, int h) {
+    public GameMenu(int w, int h, int f) {
         width = w;
         height = h;
+        frame = f;
     }
 
     @Override
@@ -25,6 +27,7 @@ public class GameMenu extends PApplet {
     @Override
     public void setup() {
         // Create the buttons
+        frameRate(frame);
         int buttonWidth = 200;
         int buttonHeight = 50;
         int buttonSpacing = 20;
@@ -36,11 +39,12 @@ public class GameMenu extends PApplet {
 
     public void playAdventure() {
         // TODO: Implement the adventure mode logic
-        
+        System.out.println("adv");
     }
 
     public void playVersus() {
         // TODO: Implement the versus mode logic
+        System.out.println("versus");
     }
 
     @Override

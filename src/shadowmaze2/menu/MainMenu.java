@@ -11,10 +11,12 @@ public class MainMenu extends PApplet {
     private GameMenu playGameMenu;
     private int width;
     private int height;
+    private int frame;
 
-    public MainMenu(int w, int h) {
+    public MainMenu(int w, int h, int f) {
         width = w;
         height = h;
+        frame = f;
     }
 
     @Override
@@ -25,6 +27,7 @@ public class MainMenu extends PApplet {
     @Override
     public void setup() {
         // Create the buttons
+        frameRate(frame);
         int buttonWidth = 200;
         int buttonHeight = 50;
         int buttonSpacing = 20;
@@ -35,13 +38,13 @@ public class MainMenu extends PApplet {
     }
 
     public void changeToSetting() {
-        settingMenu = new SettingMenu(width, height);
+        settingMenu = new SettingMenu(width, height, frame);
         PApplet.runSketch(new String[]{"SettingMenu"}, settingMenu);
         surface.setVisible(false); // Hide the current MainMenu window
     }
 
     public void changeToPlay() {
-        playGameMenu = new GameMenu(width, height);
+        playGameMenu = new GameMenu(width, height, frame);
         PApplet.runSketch(new String[]{"GameMenu"}, playGameMenu);
         surface.setVisible(false); // Hide the current MainMenu window
     }
