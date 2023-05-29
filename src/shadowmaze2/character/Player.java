@@ -3,39 +3,33 @@ package shadowmaze2.character;
 import shadowmaze2.items.*;
 
 public class Player {
-    private int posX;
-    private int posY;
-    private int hp;
-    private PortalGun portalgun;
-    private Flashlight flashlight;
-    
-    public Player(int posX, int posY) {
-        this.posX = posX;
-        this.posY = posY;
-        this.hp = 100;
+    private float x; // Player position x-coordinate
+    private float y; // Player position y-coordinate
+    private float speed; // Player speed
+
+    public Player(float startX, float startY, float playerSpeed) {
+        x = startX;
+        y = startY;
+        speed = playerSpeed;
     }
 
-    public void moveUp() {
-        this.posY--;
+    public void move(float dx, float dy) {
+        x += dx;
+        y += dy;
     }
 
-    public void moveDown() {
-        this.posY++;
+    public void display() {
+        // Draw the player on the screen
+        // Example: ellipse(x, y, playerSize, playerSize);
+        
     }
 
-    public void moveRight() {
-        this.posX++;
+    // Getter methods for accessing player position
+    public float getX() {
+        return x;
     }
 
-    public void moveLeft() {
-        this.posX--;
-    }
-
-    public void addPortalGun() {
-        this.portalgun = new PortalGun();
-    }
-
-    public void addFlashLight() {
-        this.flashlight = new Flashlight();
+    public float getY() {
+        return y;
     }
 }
