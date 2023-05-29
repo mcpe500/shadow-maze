@@ -1,4 +1,4 @@
-package shadowmaze2;
+package shadowmaze2.menu;
 
 import processing.core.PApplet;
 

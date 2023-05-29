@@ -1,5 +1,6 @@
 package shadowmaze2;
 
+import shadowmaze2.menu.MainMenu;
 import processing.core.PApplet;
 
 public class ShadowMaze2 extends PApplet {

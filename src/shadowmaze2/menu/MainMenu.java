@@ -1,17 +1,16 @@
-package shadowmaze2;
+package shadowmaze2.menu;
 
+import shadowmaze2.utils.Button;
 import processing.core.PApplet;
 
 public class MainMenu extends PApplet {
 
     private Button settingButton;
     private SettingMenu settingMenu;
+    private Button playGameButton;
+    private SettingMenu playGameMenu;
     private int width;
     private int height;
-
-    public static void main(String[] args) {
-        PApplet.main("shadowmaze2.MainMenu");
-    }
 
     @Override
     public void settings() {
@@ -31,11 +30,19 @@ public class MainMenu extends PApplet {
         int buttonSpacing = 20;
         int x = width / 2 - buttonWidth / 2;
         int y = height / 2 - (buttonHeight * 2 + buttonSpacing) / 2;
-        settingButton = new Button(this, x, y, buttonWidth, buttonHeight, "Start", this::changeToSetting);
+        settingButton = new Button(this, x, y, buttonWidth, buttonHeight, "Settings", this::changeToSetting);
+        playGameButton = new Button(this, x, y, buttonWidth + (2 * buttonHeight), buttonHeight, "Start", this::changeToPlay);
     }
 
     public void changeToSetting() {
-        settingMenu = new SettingMenu(width,height);
+        settingMenu = new SettingMenu(width, height);
+        PApplet.runSketch(new String[]{"SettingMenu"}, settingMenu);
+        surface.setVisible(false); // Hide the current MainMenu window
+    }
+
+
+    public void changeToPlay() {
+        settingMenu = new SettingMenu(width, height);
         PApplet.runSketch(new String[]{"SettingMenu"}, settingMenu);
         surface.setVisible(false); // Hide the current MainMenu window
     }

@@ -1,4 +1,4 @@
-package shadowmaze2;
+package shadowmaze2.game;
 
 public class Game {
     
