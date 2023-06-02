@@ -28,10 +28,17 @@ public class Level1 extends PApplet {
     @Override
     public void setup() {
         frameRate(frame);
-
+        textureMap = Block.intMapToTextureMap(map, this, 32, 100, 100);
     }
 
     public void draw() {
-        new Floor(this, 10, 10, 10, loadImage("./src/assets/texture/stonefloor.png"));
+        background(0);
+        for (int i = 0; i < textureMap.length; i++) {
+            for (int j = 0; j < textureMap[i].length; j++) {
+                if (textureMap[i][j] != null) {
+                    textureMap[i][j].draw();
+                }
+            }
+        }
     }
 }

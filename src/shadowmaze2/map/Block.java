@@ -14,13 +14,20 @@ public class Block {
         this.x = x;
         this.y = y;
     }
-    
-    public static Block[][] intMapToTextureMap(int[][] intMap){
+
+    public static Block[][] intMapToTextureMap(int[][] intMap, PApplet bParent, int bSize, int bX, int bY) {
         Block[][] blockMap = new Block[intMap.length][intMap[0].length];
-        for (int i = 0; i < blockMap.length; i++) {
-            for (int j = 0; j < blockMap[i].length; j++) {
-                
+        for (int i = 0; i < intMap.length; i++) {
+            for (int j = 0; j < intMap[i].length; j++) {
+                if (intMap[i][j] == 0) {
+                    blockMap[i][j] = new Floor(bParent, bSize, bX, bY, bParent.loadImage("./src/assets/texture/stonefloor.png"));
+                } else if (intMap[i][j] == 1) {
+                    // Create other block types based on your requirements
+                }
+                bX += bSize; // Increment the x position for the next block
             }
+            bX = 0; // Reset the x position for the next row
+            bY += bSize; // Increment the y position for the next row
         }
         return blockMap;
     }
@@ -53,7 +60,7 @@ public class Block {
         return parent;
     }
 
-    public void draw(PApplet parent) {
+    public void draw() {
         // Implement the drawing logic for the block
     }
 }
