@@ -1,5 +1,7 @@
 package shadowmaze2.utils;
 
+import processing.core.PImage;
+
 public class Karakters {
 
     private int healthPoint;

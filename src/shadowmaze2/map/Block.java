@@ -22,7 +22,7 @@ public class Block {
                 if (intMap[i][j] == 0) {
                     blockMap[i][j] = new Floor(bParent, bSize, bX, bY, bParent.loadImage("./src/assets/texture/stonefloor.png"));
                 } else if (intMap[i][j] == 1) {
-                    blockMap[i][j] = new Wall(bParent, bSize, bX, bY, bParent.loadImage("./src/assets/texture/Wall.png"))
+                    blockMap[i][j] = new Wall(bParent, bSize, bX, bY, bParent.loadImage("./src/assets/texture/Wall.png"));
                 }
                 bX += bSize; // Increment the x position for the next block
             }
