@@ -1,6 +1,7 @@
 package shadowmaze2.utils;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Button {
 
@@ -12,6 +13,7 @@ public class Button {
     private int positionY;
     private boolean isButtonClicked;
     private Runnable onClickFunction; // Runnable to be executed when the button is clicked
+    private PImage backgroundImage; // Image for the button background
 
     public Button(PApplet parent, int positionX, int positionY, int sizeX, int sizeY, String text, Runnable onClickFunction) {
         this.parent = parent;
@@ -22,14 +24,25 @@ public class Button {
         this.text = text;
         this.isButtonClicked = false;
         this.onClickFunction = onClickFunction; // Set the onClickFunction
+        this.backgroundImage = null; // Set the background image to null initially
+    }
+
+    public Button(PApplet parent, int positionX, int positionY, int sizeX, int sizeY, String text, Runnable onClickFunction, PImage backgroundImage) {
+        this(parent, positionX, positionY, sizeX, sizeY, text, onClickFunction);
+        this.backgroundImage = backgroundImage; // Set the background image
     }
 
     public void draw() {
         parent.rectMode(parent.CENTER);
         parent.textAlign(parent.CENTER, parent.CENTER);
 
-        parent.fill(200); // Set the fill color before drawing the rectangle
-        parent.rect(positionX, positionY, sizeX, sizeY);
+        if (backgroundImage != null) {
+            parent.image(backgroundImage, positionX, positionY, sizeX, sizeY);
+        } else {
+            parent.fill(200); // Set the fill color before drawing the rectangle
+            parent.rect(positionX, positionY, sizeX, sizeY);
+        }
+
         parent.fill(0); // Set the text color before drawing the text
         parent.text(text, positionX, positionY);
     }

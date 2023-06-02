@@ -1,6 +1,5 @@
 package shadowmaze2.character;
 
-import processing.core.PApplet;
 import shadowmaze2.utils.Karakters;
 
 public class Player extends Karakters {

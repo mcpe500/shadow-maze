@@ -1,4 +1,4 @@
-package shadowmaze2.utils;
+package shadowmaze2.character;
 
 import processing.core.PApplet;
 

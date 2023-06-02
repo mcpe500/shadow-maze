@@ -30,12 +30,12 @@ public class GameMenu extends PApplet {
         // Create the buttons
         frameRate(frame);
         int buttonWidth = 200;
-        int buttonHeight = 50;
+        int buttonHeight = 108;
         int buttonSpacing = 20;
         int x = width / 2 - buttonWidth / 2;
         int y = height / 2 - (buttonHeight * 2 + buttonSpacing) / 2;
-        playAdventureButton = new Button(this, x, y + buttonHeight + buttonSpacing, buttonWidth + (2 * buttonHeight), buttonHeight, "Adventure", this::playAdventure);
-        playVersusButton = new Button(this, x, y + (2 * (buttonHeight + buttonSpacing)), buttonWidth + (2 * buttonHeight), buttonHeight, "Versus", this::playVersus);
+        playAdventureButton = new Button(this, x, y + buttonHeight + buttonSpacing, buttonWidth, buttonHeight, "Adventure", this::playAdventure);
+        playVersusButton = new Button(this, x, y + (2 * (buttonHeight + buttonSpacing)), buttonWidth, buttonHeight, "", this::playVersus, loadImage("./src/assets/texture/versus_button.png"));
     }
 
     public void playAdventure() {
