@@ -34,7 +34,7 @@ public class GameMenu extends PApplet {
         int buttonSpacing = 20;
         int x = width / 2 - buttonWidth / 2;
         int y = height / 2 - (buttonHeight * 2 + buttonSpacing) / 2;
-        playAdventureButton = new Button(this, x, y + buttonHeight + buttonSpacing, buttonWidth, buttonHeight, "Adventure", this::playAdventure);
+        playAdventureButton = new Button(this, x, y + buttonHeight + buttonSpacing, buttonWidth, buttonHeight, "Adventure", this::playAdventure, loadImage("./src/assets/texture/adventure_button.png"));
         playVersusButton = new Button(this, x, y + (2 * (buttonHeight + buttonSpacing)), buttonWidth, buttonHeight, "", this::playVersus, loadImage("./src/assets/texture/versus_button.png"));
     }
 
