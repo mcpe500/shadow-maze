@@ -1,16 +1,19 @@
 package shadowmaze2.character;
 
-import shadowmaze2.items.*;
+import processing.core.PApplet;
+import shadowmaze2.utils.Karakters;
 
-public class Player {
+public class Player extends Karakters {
+
     private float x; // Player position x-coordinate
     private float y; // Player position y-coordinate
     private float speed; // Player speed
 
-    public Player(float startX, float startY, float playerSpeed) {
-        x = startX;
-        y = startY;
-        speed = playerSpeed;
+    public Player(float x, float y, float speed, int healthPoint, int score, int posX, int posY) {
+        super(healthPoint, score, posX, posY);
+        this.x = x;
+        this.y = y;
+        this.speed = speed;
     }
 
     public void move(float dx, float dy) {
@@ -21,7 +24,7 @@ public class Player {
     public void display() {
         // Draw the player on the screen
         // Example: ellipse(x, y, playerSize, playerSize);
-        
+
     }
 
     // Getter methods for accessing player position

@@ -6,6 +6,7 @@ public class Karakters {
     private int score;
     private int posX;
     private int posY;
+    private PImage texture;
 
     public Karakters(int healthPoint, int score, int posX, int posY) {
         this.healthPoint = healthPoint;
@@ -43,17 +44,5 @@ public class Karakters {
     public void increaseScore(int amount) {
         // Menambah skor karakter
         this.score += amount;
-    }
-
-    public void usePortalGun() {
-        // Logika penggunaan portal gun
-    }
-
-    public void useSenter() {
-        // Logika penggunaan senter
-    }
-
-    public void findHolyGrenade() {
-        // Logika pemilihan Holy Grenade
     }
 }
