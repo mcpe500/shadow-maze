@@ -3,10 +3,12 @@ package shadowmaze2.game;
 import processing.core.PApplet;
 import static processing.core.PConstants.CENTER;
 import shadowmaze2.utils.Button;
+import shadowmaze2.levels.*;
 
 public class AdventureGameMenu extends PApplet {
 
     private Button[] levels;
+    private Level1 level1;
     private int width;
     private int height;
     private int frame;
@@ -39,8 +41,18 @@ public class AdventureGameMenu extends PApplet {
 
     public void playAdventure(int i) {
         // TODO: Implement the adventure mode logic
-        if(i == 0){
-            
+        if (i == 0) {
+            level1 = new Level1(width, height, frame);
+            PApplet.runSketch(new String[]{"Level1"}, level1);
+            surface.setVisible(false); // Hide the current MainMenu window
+        } else if (i == 1) {
+
+        } else if (i == 2) {
+
+        } else if (i == 3) {
+
+        } else if (i == 4) {
+
         }
         System.out.println(i);
     }
