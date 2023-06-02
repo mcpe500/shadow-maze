@@ -23,6 +23,14 @@ public class Block {
                     blockMap[i][j] = new Floor(bParent, bSize, bX, bY, bParent.loadImage("./src/assets/texture/stonefloor.png"));
                 } else if (intMap[i][j] == 1) {
                     blockMap[i][j] = new Wall(bParent, bSize, bX, bY, bParent.loadImage("./src/assets/texture/Wall.png"));
+                } else if (intMap[i][j] == 2) {
+                    blockMap[i][j] = new Trap(bParent, bSize, bX, bY, bParent.loadImage("./src/assets/texture/beartrap.png"));
+                } else if (intMap[i][j] == 3) {
+                    blockMap[i][j] = new Lava(bParent, bSize, bX, bY, bParent.loadImage("./src/assets/texture/lava.png"));
+                // } else if (intMap[i][j] == 10) {
+                //     blockMap[i][j] = new Start(bParent, bSize, bX, bY, bParent.loadImage("./src/assets/texture/lava.png"));
+                // } else if (intMap[i][j] == 99) {
+                //     blockMap[i][j] = new Exit(bParent, bSize, bX, bY, bParent.loadImage("./src/assets/texture/lava.png"));
                 }
                 bX += bSize; // Increment the x position for the next block
             }

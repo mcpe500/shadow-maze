@@ -30,12 +30,12 @@ public class MainMenu extends PApplet {
         frameRate(frame);
 //        background(loadImage("./src/assets/texture/background_maze.png"));
         int buttonWidth = 200;
-        int buttonHeight = 50;
+        int buttonHeight = 100;
         int buttonSpacing = 20;
         int x = width / 2 - buttonWidth / 2;
         int y = height / 2 - (buttonHeight * 2 + buttonSpacing) / 2;
         settingButton = new Button(this, x, y, buttonWidth, buttonHeight, "Settings", this::changeToSetting, loadImage("./src/assets/texture/settings_button.png"));
-        playGameButton = new Button(this, x, y + buttonHeight + buttonSpacing, buttonWidth + (2 * buttonHeight), buttonHeight, "Start", this::changeToPlay, loadImage("./src/assets/texture/start_button.png"));
+        playGameButton = new Button(this, x, y + buttonHeight + buttonSpacing, buttonWidth, buttonHeight, "Start", this::changeToPlay, loadImage("./src/assets/texture/start_button.png"));
     }
     
     public void changeToSetting() {
