@@ -8,10 +8,6 @@ public class ReadMap {
 
     private int[][] map;
 
-    public static void main(String[] args) {
-        ReadMap app = new ReadMap("./src/assets/map.json");
-    }
-
     public ReadMap(String filename) {
         JSONObject json = read(filename);
         String strMap = json.getString("map");

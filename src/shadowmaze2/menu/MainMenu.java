@@ -4,7 +4,7 @@ import shadowmaze2.utils.Button;
 import processing.core.PApplet;
 
 public class MainMenu extends PApplet {
-
+    
     private Button settingButton;
     private SettingMenu settingMenu;
     private Button playGameButton;
@@ -12,22 +12,23 @@ public class MainMenu extends PApplet {
     private int width;
     private int height;
     private int frame;
-
+    
     public MainMenu(int w, int h, int f) {
         width = w;
         height = h;
         frame = f;
     }
-
+    
     @Override
     public void settings() {
         size(width, height);
     }
-
+    
     @Override
     public void setup() {
         // Create the buttons
         frameRate(frame);
+//        background(loadImage("./src/assets/texture/background_maze.png"));
         int buttonWidth = 200;
         int buttonHeight = 50;
         int buttonSpacing = 20;
@@ -36,19 +37,19 @@ public class MainMenu extends PApplet {
         settingButton = new Button(this, x, y, buttonWidth, buttonHeight, "Settings", this::changeToSetting);
         playGameButton = new Button(this, x, y + buttonHeight + buttonSpacing, buttonWidth + (2 * buttonHeight), buttonHeight, "Start", this::changeToPlay);
     }
-
+    
     public void changeToSetting() {
         settingMenu = new SettingMenu(width, height, frame);
         PApplet.runSketch(new String[]{"SettingMenu"}, settingMenu);
         surface.setVisible(false); // Hide the current MainMenu window
     }
-
+    
     public void changeToPlay() {
         playGameMenu = new GameMenu(width, height, frame);
         PApplet.runSketch(new String[]{"GameMenu"}, playGameMenu);
         surface.setVisible(false); // Hide the current MainMenu window
     }
-
+    
     @Override
     public void draw() {
         background(0); // Set background color
@@ -59,7 +60,7 @@ public class MainMenu extends PApplet {
         textSize(24);
 //        text("Hello, World!", width / 2, height / 2);
     }
-
+    
     @Override
     public void mouseClicked() {
         settingButton.checkClick(mouseX, mouseY);
