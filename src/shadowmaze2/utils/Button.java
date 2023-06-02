@@ -27,9 +27,10 @@ public class Button {
     public void draw() {
         parent.rectMode(parent.CENTER);
         parent.textAlign(parent.CENTER, parent.CENTER);
-        
+
+        parent.fill(200); // Set the fill color before drawing the rectangle
         parent.rect(positionX, positionY, sizeX, sizeY);
-        parent.fill(200);
+        parent.fill(0); // Set the text color before drawing the text
         parent.text(text, positionX, positionY);
     }
 

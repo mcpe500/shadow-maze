@@ -1,12 +1,13 @@
 package shadowmaze2.menu;
 
 import processing.core.PApplet;
+import shadowmaze2.game.AdventureGameMenu;
 import shadowmaze2.utils.Button;
 
 public class GameMenu extends PApplet {
 
     private Button settingButton;
-    private SettingMenu settingMenu;
+    private AdventureGameMenu adventureMenu;
     private Button playAdventureButton;
     private Button playVersusButton;
     private int width;
@@ -38,8 +39,9 @@ public class GameMenu extends PApplet {
     }
 
     public void playAdventure() {
-        // TODO: Implement the adventure mode logic
-        System.out.println("adv");
+        adventureMenu = new AdventureGameMenu(width, height, frame);
+        PApplet.runSketch(new String[]{"GameMenu"}, adventureMenu);
+        surface.setVisible(false); // Hide the current MainMenu window
     }
 
     public void playVersus() {

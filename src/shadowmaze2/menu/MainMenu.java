@@ -57,7 +57,7 @@ public class MainMenu extends PApplet {
         fill(255);
         textAlign(CENTER, CENTER);
         textSize(24);
-        text("Hello, World!", width / 2, height / 2);
+//        text("Hello, World!", width / 2, height / 2);
     }
 
     @Override

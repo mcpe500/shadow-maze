@@ -4,14 +4,14 @@ import processing.core.PApplet;
 import static processing.core.PConstants.CENTER;
 import shadowmaze2.utils.Button;
 
-public class Game extends PApplet {
+public class AdventureGameMenu extends PApplet {
+
     private Button[] levels;
-    private Button playVersusButton;
     private int width;
     private int height;
     private int frame;
 
-    public Game(int w, int h, int f) {
+    public AdventureGameMenu(int w, int h, int f) {
         width = w;
         height = h;
         frame = f;
@@ -32,19 +32,17 @@ public class Game extends PApplet {
         int y = height / 2 - (buttonHeight * 2 + buttonSpacing) / 2;
         levels = new Button[5];
         for (int i = 0; i < levels.length; i++) {
-            levels[i] = new Button(this, x, y + i * (buttonHeight + buttonSpacing), buttonWidth + (2 * buttonHeight), buttonHeight, String.valueOf(i), this::playAdventure);
+            int levelIndex = i;
+            levels[i] = new Button(this, x, y + i * (buttonHeight + buttonSpacing), buttonWidth + (2 * buttonHeight), buttonHeight, String.valueOf(i + 1), () -> playAdventure(levelIndex));
         }
-        playVersusButton = new Button(this, x, y + levels.length * (buttonHeight + buttonSpacing), buttonWidth + (2 * buttonHeight), buttonHeight, "Versus", this::playVersus);
     }
 
-    public void playAdventure() {
+    public void playAdventure(int i) {
         // TODO: Implement the adventure mode logic
-        System.out.println("adv");
-    }
-
-    public void playVersus() {
-        // TODO: Implement the versus mode logic
-        System.out.println("versus");
+        if(i == 0){
+            
+        }
+        System.out.println(i);
     }
 
     @Override
@@ -53,7 +51,6 @@ public class Game extends PApplet {
         for (Button level : levels) {
             level.draw();
         }
-        playVersusButton.draw();
         fill(255);
         textAlign(CENTER, CENTER);
         textSize(24);
@@ -65,6 +62,5 @@ public class Game extends PApplet {
         for (Button level : levels) {
             level.checkClick(mouseX, mouseY);
         }
-        playVersusButton.checkClick(mouseX, mouseY);
     }
 }
