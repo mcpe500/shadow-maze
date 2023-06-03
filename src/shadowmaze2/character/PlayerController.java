@@ -15,6 +15,7 @@ public class PlayerController {
     }
 
     public void handleInput() {
+        System.out.println("Key Pressed: " + parent.keyPressed);
         if (parent.keyPressed) {
             if (parent.key == 'w' || parent.key == 'W') {
                 player.move(0, -speed);
@@ -25,6 +26,8 @@ public class PlayerController {
             } else if (parent.key == 'd' || parent.key == 'D') {
                 player.move(speed, 0);
             }
+
+            System.out.println("Key Pressed: " + parent.key);
         }
     }
 }

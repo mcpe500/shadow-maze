@@ -30,9 +30,6 @@ public class MainMenu extends PApplet {
     public void setup() {
         // Create the buttons
         frameRate(frame);
-        PImage originalImage = loadImage("./src/assets/texture/SL_menu.png");
-        originalImage.resize(width, height);
-        backgroundImage = originalImage;
         int buttonWidth = 200;
         int buttonHeight = 100;
         int buttonSpacing = 20;
@@ -40,6 +37,9 @@ public class MainMenu extends PApplet {
         int y = height / 2 - (buttonHeight * 2 + buttonSpacing) / 2;
         settingButton = new Button(this, x, y, buttonWidth, buttonHeight, "Settings", this::changeToSetting, loadImage("./src/assets/texture/settings_button.png"));
         playGameButton = new Button(this, x, y + buttonHeight + buttonSpacing, buttonWidth, buttonHeight, "Start", this::changeToPlay, loadImage("./src/assets/texture/start_button.png"));
+        PImage originalImage = loadImage("./src/assets/texture/SL_menu.png");
+        originalImage.resize(width, height);
+        backgroundImage = originalImage;
     }
 
     public void changeToSetting() {
@@ -56,7 +56,7 @@ public class MainMenu extends PApplet {
 
     @Override
     public void draw() {
-        background(0); // Set background color
+        background(backgroundImage);
         settingButton.draw();
         playGameButton.draw();
         fill(255);

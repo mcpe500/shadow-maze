@@ -43,7 +43,7 @@ public class Button {
             parent.rect(positionX, positionY, sizeX, sizeY);
         }
 
-        parent.fill(0); // Set the text color before drawing the text
+        parent.fill(255); // Set the text color before drawing the text
         parent.text(text, positionX, positionY);
     }
 
