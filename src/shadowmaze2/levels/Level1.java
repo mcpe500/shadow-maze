@@ -42,7 +42,7 @@ public class Level1 extends PApplet {
         background(0);
         player.display(this);
         playerController.handleInput();
-        System.out.println("keyPressed: " + keyPressed);
+        
         for (int i = 0; i < textureMap.length; i++) {
             for (int j = 0; j < textureMap[i].length; j++) {
                 if (textureMap[i][j] != null) {
