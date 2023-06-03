@@ -22,8 +22,8 @@ public class Level1 extends PApplet {
         frame = f;
         ReadMap rm = new ReadMap("./src/assets/map.json");
         map = rm.getMap();
-        player = new Player(10, 10, 50, 100, 0, 0, 0, 32);
-        playerController = new PlayerController(this, player, 5);
+        player = new Player(32, 32, 32, 100, 0, 0, 0, 32);
+        playerController = new PlayerController(this, player, 32);
     }
 
     @Override
