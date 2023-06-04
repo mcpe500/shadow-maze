@@ -28,31 +28,58 @@ public class PlayerController extends PApplet {
         this.pressed = false;
     }
 
-    public void handleInput() {
-        dx = 0;
-        dy = 0;
+    // public void handleInput() {
+    //     dx = 0;
+    //     dy = 0;
 
-        if (parent.keyPressed && !pressed) {
-            if (parent.key == 'w' || parent.key == 'W') {
-                dy = -speed;
-            } else if (parent.key == 's' || parent.key == 'S') {
-                dy = speed;
-            }
+    //     if (parent.keyPressed && !pressed) {
+    //         if (parent.key == 'w' || parent.key == 'W') {
+    //             dy = -speed;
+    //         } else if (parent.key == 's' || parent.key == 'S') {
+    //             dy = speed;
+    //         }
             
-            if (parent.key == 'a' || parent.key == 'A') {
-                dx = -speed;
-            } else if (parent.key == 'd' || parent.key == 'D') {
-                dx = speed;
-            }
-            pressed = true;
-            player.move(dx, dy);
-        }
+    //         if (parent.key == 'a' || parent.key == 'A') {
+    //             dx = -speed;
+    //         } else if (parent.key == 'd' || parent.key == 'D') {
+    //             dx = speed;
+    //         }
+    //         pressed = true;
+    //         player.move(dx, dy);
+    //     }
 
-        if (!parent.keyPressed && pressed) {
-            pressed = false;
-        }
-    }
+    //     if (!parent.keyPressed && pressed) {
+    //         pressed = false;
+    //     }
+    // }
+// public void handleInput() {
+//     dx = 0;
+//     dy = 0;
 
+//     if (parent.keyPressed && !pressed) {
+//         if (parent.key == 'w' || parent.key == 'W') {
+//             dy = -speed * Math.sin(Math.atan2(cameraHeight / zoomFactor, mouseX - x));
+//             dy += speed * Math.cos(Math.atan2(y + playerSize/2 - y, mouseWidth/zoomFactor - x - width/2)) / 4;
+//         } else if (parent.key == 's' || parent.key == 'S') {
+//             dy = speed * Math.sin(Math.atan2(cameraHeight / zoomFactor, mouseX - x));
+//             dy -= speed * Math.cos(Math.atan2(y + playerSize/2 - y, mouseWidth/zoomFactor - x - width/2)) / 4;
+//         }
+        
+//         if (parent.key == 'a' || parent.key == 'A') {
+//             dx = -speed * Math.sin(Math.atan2(mouseHeight / zoomFactor, x - mouseX)) + 3;
+//             dx -= speed * Math.cos(Math.atan2((height/2)-cameraHeight/zoomFactor, (width/2)+mouseWidth/zoomFactor-(x+width)/2)) / 4;
+//         } else if (parent.key == 'd' || parent.key == 'D') {
+//             dx = speed * Math.sin(Math.atan2(mouseHeight / zoomFactor, x - mouseX)) - 3;
+//             dx += speed * Math.cos(Math.atan2((height/2)-cameraHeight/zoomFactor, (width/2)+mouseWidth/zoomFactor-(x+width)/2)) / 4;
+//         }
+//         pressed = true;
+//         player.move(dx, dy);
+//     }
+
+//     if (!parent.keyPressed && pressed) {
+//         pressed = false;
+//     }
+// }
     // public void handleInput() {
     //     dx = 0;
     //     dy = 0;
